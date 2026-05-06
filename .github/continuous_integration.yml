@@ -1,0 +1,32 @@
+name: Integrazione continua (Build, Test, Analisi)
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build-verify:
+    runs-on: ubuntu-latest  # Standard test environment
+
+    steps:
+      - name: Checkout del codice
+        uses: actions/checkout@v4
+
+      - name: Setup JDK-21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven # Optimization to reuse the downloaded dependencies
+
+      - name: Compilazione del Progetto
+        run: mvn clean compile
+
+      - name: Esecuzione test unitari
+        run: mvn test
+
+      - name: Analisi statica e impacchettamento (jar)
+        run: mvn package  # NOTE: This one comprehends compile and test, so if
+                          # the others are successful, then this one will checktype
