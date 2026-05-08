@@ -19,14 +19,23 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-          cache: maven # Optimization to reuse the downloaded dependencies
+          cache: maven
 
       - name: Compilazione del Progetto
         run: mvn clean compile
 
-      - name: Esecuzione test unitari
+      - name: Esecuzione test unitari e generazione copertura
         run: mvn test
 
+      # Trasmette il file XML al server esterno
+      - name: Trasmissione a Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          repo-token: ${{ secrets.COVERALLS_TOKEN }}
+          file: target/site/jacoco/jacoco.xml
+          format: jacoco
+
+      # Esegue Checkstyle e impacchetta il JAR. 
+      # -DskipTests impedisce a Maven di rieseguire i test già passati al mvn test
       - name: Analisi statica e impacchettamento (jar)
-        run: mvn package  # NOTE: This one comprehends compile and test, so if
-                          # the others are successful, then this one will checktype
+        run: mvn verify -DskipTests
