@@ -23,7 +23,7 @@ jobs:
         run: mvn clean compile
 
       - name: Esecuzione test unitari e generazione copertura
-        run: mvn test
+        run: mvn test jacoco:report
 
       # Trasmette il file XML al server esterno
       - name: Trasmissione a Coveralls
