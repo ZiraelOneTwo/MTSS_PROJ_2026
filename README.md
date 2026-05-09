@@ -85,9 +85,8 @@ System.out.println(art);
 - **Checkstyle**: configurazione in `checkstyle.xml` (eseguito nella fase `validate`)
 - **JaCoCo**: report di copertura generato nella fase `verify`
 
-- [![Integrazione continua (Build, Test, Analisi)](https://github.com/ZiraelOneTwo/MTSS_PROJ_2026/actions/workflows/continuous_integration.yml/badge.svg)](https://github.com/ZiraelOneTwo/MTSS_PROJ_2026/actions/workflows/continuous_integration.yml)
-<img width="2672" height="1562" alt="immagine" src="https://github.com/user-attachments/assets/370224cf-92a8-4186-bd33-8deef3043be5" />
-
+[![Integrazione continua (Build, Test, Analisi)](https://github.com/ZiraelOneTwo/MTSS_PROJ_2026/actions/workflows/continuous_integration.yml/badge.svg)](https://github.com/ZiraelOneTwo/MTSS_PROJ_2026/actions/workflows/continuous_integration.yml)
+[![Coverage Status](https://coveralls.io/repos/github/ZiraelOneTwo/MTSS_PROJ_2026/badge.svg?branch=master)](https://coveralls.io/github/ZiraelOneTwo/MTSS_PROJ_2026?branch=master)
 
 ## Licenza
 
