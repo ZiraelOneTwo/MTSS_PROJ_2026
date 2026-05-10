@@ -40,9 +40,6 @@ Internamente converte l’intero in romano usando `IntegerToRoman.convert` e poi
 - `src/main/java/it/unipd/mtss/RomanPrinter.java`
   - generazione ASCII Art a partire dal numero romano
 
-- `src/main/java/it/unipd/mtss/App.java`
-  - entrypoint di esempio (attualmente stampa "Hello World!")
-
 ## Build, test e quality checks
 
 Eseguire validazione (include **Checkstyle**) e test (include report **JaCoCo**):
